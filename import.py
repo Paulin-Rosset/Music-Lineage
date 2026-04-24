@@ -32,6 +32,7 @@ tables = [
     "release_group_secondary_type_join",
     "release_country",
     "script",
+    "l_artist_artist",
 ]
 
 for table in tables:
