@@ -1,0 +1,3 @@
+\copy public.l_artist_recording FROM 'C:/Users/user/OneDrive/Bureau/M1-IPP/S2/Database/TP/Project/musicbrainz/mbdump/l_artist_recording'
+\copy public.l_artist_release_group FROM 'C:/Users/user/OneDrive/Bureau/M1-IPP/S2/Database/TP/Project/musicbrainz/mbdump/l_artist_release_group'
+\copy public.artist_credit_name FROM 'C:/Users/user/OneDrive/Bureau/M1-IPP/S2/Database/TP/Project/musicbrainz/mbdump/artist_credit_name'

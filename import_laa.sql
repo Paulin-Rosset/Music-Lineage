@@ -1,0 +1,1 @@
+\copy public.l_artist_artist FROM 'C:/Users/user/OneDrive/Bureau/M1-IPP/S2/Database/TP/Project/musicbrainz/mbdump/l_artist_artist' WITH (FORMAT text, ENCODING 'UTF8')
