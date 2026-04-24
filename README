@@ -1,0 +1,4 @@
+I had troubles importing the data by its scale and the fact that I selected 25 out of 375.
+Here the link of the database: 
+I downloaded only in 20260418-002325/ the files : mbdump.tar.bz2 and mbdump-derived.tar.bz2 which sum up to a size of ~27 GB.
+Then I imported table by table
