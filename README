@@ -1,4 +1,33 @@
-I had troubles importing the data by its scale and the fact that I selected 25 out of 375.
-Here the link of the database: 
-I downloaded only in 20260418-002325/ the files : mbdump.tar.bz2 and mbdump-derived.tar.bz2 which sum up to a size of ~27 GB.
-Then I imported table by table
+# Tracing Musical Lineage Through Databases
+M1 IPP S2 — Paulin Rosset
+
+## Prerequisites
+- PostgreSQL 18/15
+- Python 3.10+
+- pip install psycopg2 streamlit plotly pandas
+
+## Step 1 — Download MusicBrainz data
+Go to: https://ftp.musicbrainz.org/pub/musicbrainz/data/fullexport/20260418-002325/
+Download: mbdump.tar.bz2 and mbdump-derived.tar.bz2
+Extract both into a folder called: musicbrainz/
+
+## Step 2 — Create the database
+Open psql and run:
+  CREATE DATABASE musicbrainz ENCODING 'UTF8';
+
+## Step 3 — Apply the schema in your terminal (in this order)
+psql -U postgres -d musicbrainz -f Extensions.sql
+psql -U postgres -d musicbrainz -f CreateTypes.sql
+psql -U postgres -d musicbrainz -f CreateTables.sql
+psql -U postgres -d musicbrainz -f CreateFunctions.sql
+psql -U postgres -d musicbrainz -f CreatePrimaryKeys.sql
+psql -U postgres -d musicbrainz -f CreateIndexes.sql
+psql -U postgres -d musicbrainz -f CreateFKConstraints.sql
+psql -U postgres -d musicbrainz -f CreateConstraints.sql
+
+## Step 4 — Import the data
+Edit import.py to set data_dir to your mbdump folder path and put your postre password
+python import.py
+
+## Step 5 — Run the dashboard
+python -m streamlit run music_dashboard.py
